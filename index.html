@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautifyMe</title>
+    <!-- Bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts Link  -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    
+    <!-- Linking External Css file  -->
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <nav class="navigation navbar navbar-expand-lg  text-light sticky-top" id="navigation">
+                <div class="container-fluid">
+
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="index.html">
+                    <span style="color:#ee1d3f; font-size: 30px;">Beautify</span><span style="color:#c20525; font-size: 30px;">Me</span>
+                    </a>
+
+                    <!-- Toggler -->
+                    <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Collapsible Content -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <!-- Search -->
+                        <form class="d-flex mx-lg-auto my-2 my-lg-0">
+                            <input class="form-control  w-75" type="search" placeholder="Search">
+                            <button class="search-btn btn" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+                        </form>
+
+                        <!-- Menu -->
+                        <ul class="menubar navbar-nav ms-auto align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link " href="#banner">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="products.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#footer">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn nav-link text-light" type="button" data-bs-toggle="modal" data-bs-target="#wishlistModal">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn nav-link text-light" type="button" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button"  class="login-submit-btn nav-btn btn ms-lg-2 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-login="@loginbtn">Login</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </nav>
+
+        <!-- Login Modal Div  -->
+        <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+                <div class=" modal-dialog ">
+                    <div class="modal-bg modal-content  text-danger" id="loginModelbg">
+                        <div class="modal-header position-relative">
+                            <h1 class="modal-title fs-3 w-100 text-center" id="loginLabel">User Login</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <!-- <div class="mb-3">
+                                    <label for="user-email" class="col-form-label">Email:</label>
+                                    <input type="text" class="form-control" id="user-email">
+                                </div> -->
+                                <div class="mb-3">
+                                    <label for="user-name" class="col-form-label">User Name:</label>
+                                    <input type="text" class="form-control" id="user-name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user-password" class="col-form-label">Password:</label>
+                                    <input type="password" class="form-control" id="user-password" required>
+                                    <p class="text-end "><a href="#" class="text-dark" style="font-size:12px;" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"> Forgot Password?</a></p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" class="login-submit-btn btn btn-primary">Login</button>
+                            <p>Don't have an account? </p><a href="#" class="text-dark" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal"> Sign up</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Forgot Password Modal Div  -->
+        <div class="modal fade " id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPassLabel" aria-hidden="true">
+                <div class=" modal-dialog ">
+                    <div class="modal-bg modal-content text-danger" id="forgotPasswordModelbg">
+                        <div class="modal-header position-relative">
+                            <h1 class="modal-title fs-3 w-100 text-center" id="loginLabel">Forgot Your Password </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <!-- <div class="mb-3">
+                                    <label for="user-email" class="col-form-label">Email:</label>
+                                    <input type="text" class="form-control" id="user-email">
+                                </div> -->
+                                <div class="mb-3">
+                                    <label for="user-name" class="col-form-label">Email:</label>
+                                    <input type="text" class="form-control" id="mail-id" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user-password" class="col-form-label">New Password:</label>
+                                    <input type="password" class="form-control" id="new-userpassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user-password" class="col-form-label">Confirm Password:</label>
+                                    <input type="password" class="form-control" id="confirmnew-userpassword" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" class="login-submit-btn btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Change Password</button>
+                            <!-- <p>Don't have an account? </p><a href="#" class="text-dark" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal"> Sign up</a> -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Signup Modal Div  -->
+        <div class="modal fade " id="signupModal" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+                <div class=" modal-dialog ">
+                    <div class="modal-bg modal-content  text-danger">
+                        <div class="modal-header position-relative">
+                            <h1 class="modal-title fs-3 w-100 text-center" id="loginLabel">User SignUp</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="user-email" class="col-form-label">Email Id:</label>
+                                    <input type="email" class="form-control" id="user-email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user-name" class="col-form-label">User Name:</label>
+                                    <input type="text" class="form-control" id="user-name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user-password" class="col-form-label">Password:</label>
+                                    <input type="password" class="form-control" id="user-password" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer  ">
+                            
+                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="login-submit-btn btn btn-primary mx-auto " data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#loginModal" data-bs-login="@loginbtn">Create Account</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Add To Cart Modal  -->
+        <div class="modal fade " id="cartModal" tabindex="-1" aria-labelledby="cartLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-primary-subtle text-danger">
+                        <div class="modal-header ">
+                            <h1 class="modal-title fs-3 " id="yourCart">Your Cart Items</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-info d-block" id="cartItems">
+                                <!-- <img src="" alt="">
+                                <h2 class="cart-item-name fs-5 "> </h2>                                -->
+                            </div>
+                            <div id="cartTotal"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="login-submit-btn btn btn-primary" onclick="">Proceed to pay</button>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- Add To Wishlist Modal  -->
+        <div class="modal fade " id="wishlistModal" tabindex="-1" aria-labelledby="cartLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-primary-subtle text-danger">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-3 text-center" id="yourCart">Your Wishlist</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-info d-block" id="wishlistItems">
+                                <!-- <img src="" alt="">
+                                <h2 class="cart-item-name fs-5 "> </h2>                                -->
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" id="moveAllToCartBtn">
+                                Move All to Cart 🛒
+                            </button>
+                            <!-- <button type="button" class="login-submit-btn btn btn-primary" onclick="">Proceed to pay</button> -->
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+
+        <!-- View Product Details Modal -->
+        <div class="modal fade" id="viewProductModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content rounded-4 shadow">
+
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold">Product Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+
+                        <!-- Product Image -->
+                        <div class="col-md-5 text-center">
+                            <img id="modalProductImg" class="img-fluid rounded-3 shadow-sm" style="max-height:300px;">
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="col-md-7">
+                            <h4 id="modalProductName" class="fw-bold"></h4>
+                            <p id="modalProductCategory" class="text-muted"></p>
+                            <h5 id="modalProductPrice" class="text-danger fw-bold"></h5>
+                            <p id="modalProductTagline" class="small text-muted"></p>
+
+                            <div class="mt-3">
+                            <button class="modalWishlistBtn btn btn-outline-danger me-2"  type="button" data-bs-target="#wishlistModal">
+                                ❤️ Add to Wishlist
+                            </button>
+
+                            <button class="btn btn-danger" id="modalAddCartBtn">
+                                🛒 Add to Cart
+                            </button>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slidder bar  -->
+        <div id="banner" class="carousel-slidder carousel carousel-dark slide" data-bs-ride="carousel" data-aos="fade-up">
+                
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Carousel Inner -->
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" data-bs-interval="10000">
+
+                    <div class="overlay"></div>
+
+                    <img src="images/foundation-containers-advertising-assortment.jpg"
+                        class="d-block w-100" alt="Product-1">
+
+                    <div class="carousel-caption text-white">
+                        <h5>Enhance Your Natural Beauty</h5>
+                        <p>Discover a wide range of premium beauty and skincare products designed to suit every skin type.</p>
+                    </div>
+
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" data-bs-interval="2000">
+
+                    <div class="overlay"></div>
+
+                    <img src="images/top-view-frame-with-cosmetics-copy-space.jpg"
+                        class="d-block w-100" alt="Product-2">
+
+                    <div class="carousel-caption text-white">
+                        <h5>Beauty Products You Can Trust</h5>
+                        <p>From makeup essentials to skincare must-haves, our products are carefully selected for quality.</p>
+                    </div>
+
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+
+                    <div class="overlay"></div>
+
+                    <img src="images/view-arrangement-with-different-make-up-products.jpg"
+                        class="d-block w-100" alt="Product-3">
+
+                    <div class="carousel-caption text-white">
+                        <h5>Shop Smart. Look Beautiful.</h5>
+                        <p>Enjoy a smooth shopping experience with secure payments and fast delivery.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+        <!-- Categories Section  -->
+        <div class="container my-5" id="category-sec">
+            <!-- <h4 class="mb-4 text-danger">Shop by Category</h4> -->
+            <div class="categories row text-center">
+                <!-- Category 1 -->
+                <div class="col-md-3">
+                    <a href="#"><img src="images/makeup-category-img-1.jpg" class="img-fluid mb-4" ></a>
+                    <h6 class="card-title"><a href="#" class="text-decoration-none text-dark mb-3">Makeup</a></h6>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="col-md-3">
+                    <a href="#"><img src="images/skincare-category-img-1.jpg" class="img-fluid mb-4"></a>
+                    <h6 class="card-title"><a href="#" class="text-decoration-none text-dark mb-3">Skincare</a></h6>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="col-md-3">
+                    <a href="#"><img src="images/haircare-category-img-1.jpg" class="img-fluid mb-4"></a>
+                    <h6 class="card-title"><a href="#" class="text-decoration-none text-dark mb-3">Haircare</a></h6>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="col-md-3">
+                    <a href="#"><img src="images/fragrance-category-img-1.jpg" class="img-fluid mb-4"></a>
+                    <h6 class="card-title"><a href="#" class="text-decoration-none text-dark mb-3">Fragrance</a></h6>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- The Beauty Sale   -->
+        <div class="container my-5" id="beauty-sale">
+            <h4 class="mb-4">The Beauty Sale</h4>
+
+            <div class="b-sale d-flex gap-3 overflow-auto hide-scrollbar pb-3">
+
+                <!-- Card 1 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" 
+                data-id="1" 
+                data-name="Liquid Lipstick" 
+                data-price="399" 
+                data-img="images/liquid-lipstick-img.jpeg" 
+                data-category="Makeup" 
+                data-tagline="Bold Matte Finish.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">20% OFF</span>
+                        </span>
+
+                        <img src="images/liquid-lipstick-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Liquid Lipstick</h6>
+                        <p class="text-muted small mb-2">Bold Matte Finish.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹399</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹499 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="2" 
+                data-name="Concealer Palette" 
+                data-price="819" 
+                data-img="images/concealer-colorPallete-img.jpeg" 
+                data-category="Makeup" 
+                data-tagline="Flawless Skin Coverage.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">15% OFF</span>
+                        </span>
+
+                        <img src="images/concealer-colorPallete-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Conceler Pallete</h6>
+                        <p class="text-muted small mb-2">Flawless Skin Coverage.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹819</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹999 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="3" 
+                data-name="Eye Shadow Combo" 
+                data-price="1104" 
+                data-img="images/eye-shadow-img.jpeg" 
+                data-category="Makeup"
+                data-tagline="Stunning Eye Colors.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">18% OFF</span>
+                        </span>
+
+                        <img src="images/eye-shadow-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Eye Shadow Combo</h6>
+                        <p class="text-muted small mb-2">Stunning Eye Colors.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹1104</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹1299 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>    
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="4" 
+                data-name="Foundation Combo" 
+                data-price="1199" 
+                data-img="images/foundation-containers-advertising-assortment.jpg" 
+                data-category="Makeup"
+                data-tagline="Radiant Smooth Glow.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">25% OFF</span>
+                        </span>
+
+                        <img src="images/foundation-containers-advertising-assortment.jpg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Foundation Combo</h6>
+                        <p class="text-muted small mb-2">Radiant Smooth Glow.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹1199</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹1599 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="5" 
+                data-name="Lip Balm Combo" 
+                data-price="349" 
+                data-img="images/lip-balm-img.jpeg" 
+                data-category="Makeup"
+                data-tagline="Soft Hydrated Lips.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">30% OFF</span>
+                        </span>
+
+                        <img src="images/lip-balm-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Lip Balm Combo</h6>
+                        <p class="text-muted small mb-2">Soft Hydrated Lips.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹349</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹499 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="6" 
+                data-name="Lipstick Combo" 
+                data-price="683" 
+                data-img="images/lipstick-combo-img.jpeg" 
+                data-category="Makeup"
+                data-tagline="Shades For Every Mood.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">10% OFF</span>
+                        </span>
+
+                        <img src="images/lipstick-combo-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Lipstick Combo</h6>
+                        <p class="text-muted small mb-2">Shades For Every Mood.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹683</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹759 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="7" 
+                data-name="Makeup Combo Set" 
+                data-price="2000" 
+                data-img="images/makeup-combo-set-img.jpeg" 
+                data-category="Makeup"
+                data-tagline="Complete Beauty Kit.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">23% OFF</span>
+                        </span>
+
+                        <img src="images/makeup-combo-set-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Makeup Combo Set</h6>
+                        <p class="text-muted small mb-2">Complete Beauty Kit.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹2000</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹2599 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="8" 
+                data-name="Makeup Kit" 
+                data-price="3909" 
+                data-img="images/makeup-kit-img.jpeg" 
+                data-category="Makeup"
+                data-tagline="Professional Glam Look.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">15% OFF</span>
+                        </span>
+
+                        <img src="images/makeup-kit-img.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Makeup Kit</h6>
+                        <p class="text-muted small mb-2">Professional Glam Look.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹3909</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹4599 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                            
+                        
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="9" 
+                data-name="Himalaya Facewash" 
+                data-price="225" 
+                data-img="images/himalaya-face-wash.jpeg" 
+                data-category="Skincare"
+                data-tagline="Fresh Clear Skin.">
+                    <div class="position-relative">
+        
+                        <!-- Discount Badge -->
+                        <span class="position-absolute top-0 end-0 m-2 badge rounded-pill" style="background:#f7075f;">
+                            <span style="font-size: 15px;">10% OFF</span>
+                        </span>
+
+                        <img src="images/himalaya-face-wash.jpeg" class="card-img-top">
+                </div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Himalaya Facewash</h6>
+                        <p class="text-muted small mb-2">Fresh Clear Skin.</p>
+                        <p>
+                            <span class="fw-bold text-danger mb-2">₹225</span> 
+                            <span class="fw-bold text-danger mb-2" style="text-decoration: line-through;font-size: small;">₹249 </span>
+                        </p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+
+                        
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-name="Liquid Lipstick" data-price="399" data-img="images/liquid-lipstick-img.jpeg">
+                    <div class="text-center" style="margin-top: 120px;">
+                        <a href="products.html" class="text-decoration-none text-danger fs-4">View More  <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Mostly Selling items  -->
+        <div class="container my-5">
+            <h4 class="mb-4">Trending Products</h4>
+
+            <div class="d-flex gap-3 overflow-auto hide-scrollbar pb-3">
+
+                <!-- Card 1 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="10" data-name="Matte Foundation" data-price="699" data-img="images/foundation-containers-advertising-assortment.jpg" data-category="Makeup">
+                    <img src="images/foundation-containers-advertising-assortment.jpg"
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Matte Foundation</h6>
+                        <p class="fw-bold text-danger mb-2">₹899</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="11" data-name="Lipstick Combo" data-price="699" data-img="images/lipstick-combo-img.jpegadd-cart" data-category="Makeup">
+                    <img src="images/lipstick-combo-img.jpeg"
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Lipstick Combo</h6>
+                        <p class="fw-bold text-danger mb-2">₹699</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="12" data-name="Makeup Kit" data-price="1299" data-img="images/makeup-kit-img.jpeg" data-category="Makeup">
+                    <img src="images/makeup-kit-img.jpeg"
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Makeup Kit</h6>
+                        <p class="fw-bold text-danger mb-2">₹1299</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="13" data-name="Concealer Color Pallete" data-price="899" data-img="images/concealer-colorPallete-img.jpeg" data-category="Makeup">
+                    <img src="images/concealer-colorPallete-img.jpeg"
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Concealer Color Pallete</h6>
+                        <p class="fw-bold text-danger mb-2">₹899</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="14" data-name="Eye Shadow" data-price="599" data-img="images/eye-shadow-img.jpeg" data-category="Makeup">
+                    <img src="images/eye-shadow-img.jpeg "
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Eye Shadow</h6>
+                        <p class="fw-bold text-danger mb-2">₹599</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="15" data-name="Himalaya Face Wash" data-price="199" data-img="images/himalaya-face-wash.jpeg" data-category="Skincare">
+                    <img src="images/himalaya-face-wash.jpeg "
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Himalaya Facewash</h6>
+                        <p class="fw-bold text-danger mb-2">₹199</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-id="16" data-name="Makeup Combo Set" data-price="1499" data-img="images/makeup-combo-set-img.jpeg" data-category="Makeup">
+                    <img src="images/makeup-combo-set-img.jpeg"
+                        class="card-img-top"
+                        style="height:180px; object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Makeup Combo Set</h6>
+                        <p class="fw-bold text-danger mb-2">₹1499</p>
+                        <button class="view-product btn btn-sm btn-danger " type="button" data-bs-toggle="modal" data-bs-target="#viewProductModal">View Product</button>
+                        <button class="add-cart btn btn-sm btn-danger ">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="product-card card flex-shrink-0 shadow p-3 mb-2 rounded" data-name="Liquid Lipstick" data-price="399" data-img="images/liquid-lipstick-img.jpeg">
+                    <div class="text-center" style="margin-top: 120px;">
+                        <a href="products.html" class="text-decoration-none text-danger fs-4">View More  <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+        <!-- User Feedback carousel  -->
+        <div id="feedback" class="carousel slide py-5" data-bs-ride="carousel" >
+
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row justify-content-center g-3">
+
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100">
+                                    <div class="row g-0">
+                                        <div class="col-4">
+                                            <img src="images/user-1.jpeg" class="img-fluid rounded-start" alt="User">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Rajesh Sharma</h5>
+                                                <p class="card-text">Great service and quality products.</p>
+                                                <small class="text-muted">2 days ago</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100">
+                                    <div class="row g-0">
+                                        <div class="col-4">
+                                            <img src="images/user-2.jpg" class="img-fluid rounded-start" alt="User">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Customer 2</h5>
+                                                <p class="card-text">Fast delivery and good support.</p>
+                                                <small class="text-muted">5 days ago</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row justify-content-center g-3">
+
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100">
+                                    <div class="row g-0">
+                                        <div class="col-4">
+                                            <img src="images/user-3.jpg" class="img-fluid rounded-start" alt="User">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Customer 3</h5>
+                                                <p class="card-text">Affordable prices.</p>
+                                                <small class="text-muted">1 week ago</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100">
+                                    <div class="row g-0">
+                                        <div class="col-4">
+                                            <img src="images/user-4.jpg" class="img-fluid rounded-start" alt="User">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Customer 4</h5>
+                                                <p class="card-text">Highly recommended!</p>
+                                                <small class="text-muted">2 weeks ago</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#feedback" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#feedback" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+        
+        <!-- Footer  -->
+        <footer class="bg-dark text-light py-4">
+            <div class="container">
+                <div class="row text-center text-md-start">
+
+                <div class="col-md-3 ">
+                    <h5 class="text-danger"><span style="color:#ee1d3f;">Beautify</span><span style="color:#c20525;">Me</span></h5>
+                    <p>Your beauty, our passion.</p>
+                </div>
+
+                <div class="col-md-3  ">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled ">
+                    <li><a href="#navigation" class="text-light text-decoration-none "><i class="fa-solid fa-home"></i>   Home</a></li>
+                    <li><a href="#beauty-sale" class="text-light text-decoration-none"><i class="fa-solid fa-box"></i>   Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 ">
+                    <h6>Follow Us On</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fa-brands fa-instagram"></i>   @beautifyme_official</li>
+                        <li><i class="fa-brands fa-facebook"></i>   BeautifyMe Official</li>
+                        <li><i class="fa-brands fa-twitter"></i>   @BeautifyMe_Store</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 ">
+                    <h6>Contact</h6>
+                    <p>Email: support@beautifyme.com</p>
+                </div>
+
+                </div>
+                <hr class="border-secondary">
+                <p class="text-center mb-0">© 2026 BeautifyMe</p>
+            </div>
+        </footer>
+    
+
+    <script src="script.js"></script>
+        
+
+    <!-- Bootstrap Js Link  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
