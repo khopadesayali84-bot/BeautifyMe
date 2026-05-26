@@ -126,6 +126,22 @@
             object-fit:cover;
             border-radius: 20%;
         }
+
+
+        #why-choose-us h1{
+            /* color: white; */
+            color: #a6072c;
+            font-weight: 700;
+        }
+        #why-choose-us h2{
+            color: #bd1239;
+        }
+
+        #why-choose-us img{
+            border-radius: 30px;
+        }
+
+
         .product-card {
             width: 265px;
             max-height: 360px;
@@ -172,7 +188,7 @@
             /* margin-left: 30%; */
             text-align: center;
         }
-        h2{
+        h2,h1{
             font-family: "Roboto Slab", serif;
         }
         .testimonials-heading h2{
