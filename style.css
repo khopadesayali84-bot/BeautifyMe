@@ -152,3 +152,85 @@
         .brand-info-img img{
             border-radius: 50%;
         }
+         #testimonials{
+            margin-top: 120px;
+            margin-left: 30px;
+            margin-right: 30px;
+            background-color: #fddce7;
+            /* background: #e8f0ff; */
+            /* margin-left: 40%; */
+        }
+        .testimonial-badge{
+            background: #fddce7;
+            color: #d1074a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .testimonials-heading{
+            /* margin-left: 30%; */
+            text-align: center;
+        }
+        h2{
+            font-family: "Roboto Slab", serif;
+        }
+        .testimonials-heading h2{
+            margin-top: 10px;
+            font-size: 32px;
+            color: #d1074a;
+        }
+        .testimonials-heading p{
+            color: #666;
+            margin: 15px auto 40px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .testimonials-main{
+            display: flex;
+            gap: 30px;
+            /* margin-left: 30px; */
+        }
+        .testimonials-feedback{
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            text-align: left;
+            transition: 0.3s;
+        }
+        .testimonials-feedback:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        .ratings{
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .testimonials-feedback p{
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        .feedback-user{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start
+        }
+        .feedback-user img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .feedback-userInfo{
+            text-align: left;
+        }
+        .feedback-userInfo h4{
+            color: #1a2b4c;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
