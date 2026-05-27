@@ -127,6 +127,18 @@
             border-radius: 20%;
         }
 
+        #about-us h1{
+            /* color: white; */
+            color: #a6072c;
+            font-weight: 700;
+        }
+        #about-us h2{
+            color: #bd1239;
+        }
+
+        #about-us img{
+            border-radius: 30px;
+        }
 
         #why-choose-us h1{
             /* color: white; */
@@ -141,6 +153,15 @@
             border-radius: 30px;
         }
 
+        /* #category-sec h1{
+            color: #a6072c;
+            font-weight: 700;
+        } */
+
+        h1{
+            color: #a6072c;
+            font-weight: 700;
+        }
 
         .product-card {
             width: 265px;
@@ -168,85 +189,60 @@
         .brand-info-img img{
             border-radius: 50%;
         }
-         #testimonials{
-            margin-top: 120px;
-            margin-left: 30px;
-            margin-right: 30px;
-            background-color: #fddce7;
-            /* background: #e8f0ff; */
-            /* margin-left: 40%; */
+        
+
+        /* TESTIMONIALS SECTION */
+
+        #testimonials{
+            /* background: #fff5f8; */
         }
-        .testimonial-badge{
-            background: #fddce7;
-            color: #d1074a;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+
+        .testimonial-tag{
+            background: #ffd3df;
+            color: #c20525;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
             font-weight: 600;
         }
-        .testimonials-heading{
-            /* margin-left: 30%; */
-            text-align: center;
-        }
-        h2,h1{
+
+        #testimonials h1{
+            color: #a6072c;
             font-family: "Roboto Slab", serif;
         }
-        .testimonials-heading h2{
-            margin-top: 10px;
-            font-size: 32px;
-            color: #d1074a;
-        }
-        .testimonials-heading p{
-            color: #666;
-            margin: 15px auto 40px;
+
+        .testimonial-description{
             max-width: 600px;
-            line-height: 1.6;
+            margin: auto;
         }
-        .testimonials-main{
-            display: flex;
-            gap: 30px;
-            /* margin-left: 30px; */
-        }
-        .testimonials-feedback{
-            background: #fff;
+
+        .testimonial-card{
+            background: white;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            text-align: left;
-            transition: 0.3s;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: 0.4s ease;
         }
-        .testimonials-feedback:hover{
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+        .testimonial-card:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.10);
         }
-        .ratings{
-            color: #f39c12;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        .testimonials-feedback p{
-            color: #555;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 20px;
+
+        .stars{
+            color: #f4b400;
             font-size: 15px;
         }
-        .feedback-user{
-            display: flex;
-            align-items: center;
-            justify-content: flex-start
+
+        .testimonial-text{
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
         }
-        .feedback-user img{
+
+        .testimonial-user-img{
             width: 60px;
             height: 60px;
+            object-fit: cover;
             border-radius: 50%;
-            margin-right: 15px;
-        }
-        .feedback-userInfo{
-            text-align: left;
-        }
-        .feedback-userInfo h4{
-            color: #1a2b4c;
-            font-size: 15px;
-            margin-bottom: 2px;
         }
