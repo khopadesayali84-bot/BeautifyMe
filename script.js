@@ -173,7 +173,7 @@ function showWishlist(){
         return `
         <div class="card mb-2 w-100 p-2 shadow-sm">
             <div class="d-flex align-items-center gap-3">
-                <img src="${item.img}" width="80" height="80" style="object-fit:cover;">
+                <img src="${item.img}" width="150" height="150" style="object-fit:cover;">
                 
                 <div>
                     <h6 class="mb-0">${item.name}</h6>
