@@ -1,6 +1,7 @@
         body{
             font-family: "Google Sans", sans-serif;
-            background-color: #fddce7;
+            /* background-color: #fddce7; */
+            background-color: #fff;
         }
 
         /* Navbar */
@@ -350,4 +351,34 @@
 }
 
 .btn-pink {
+}
+
+/* #filters li{
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+#filters li{
+    font-size: 18px;
+}
+
+#filters li:hover{
+    color: #bd1239;
+} */
+
+.filter-item{
+    cursor:pointer;
+    transition:all 0.3s ease;
+    padding:8px 12px;
+    border-radius:8px;
+}
+
+.filter-item:hover{
+    color:#ee1d3f;
+    background-color:rgba(238,29,63,0.08);
+}
+
+.filter-item.active{
+    color:#ee1d3f;
+    background-color:rgba(238,29,63,0.12);
 }
