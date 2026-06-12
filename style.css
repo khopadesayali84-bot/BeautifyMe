@@ -8,7 +8,7 @@
         #navigation{
             background-color: #272323;
             z-index: 1020;
-            height: 70px;
+            min-height: 70px;
             padding: 12px 20px;
         }
 
@@ -38,6 +38,40 @@
             height: 2px;
             background: #c02c5d;
             transition: width 0.4s ease;
+        }
+
+        @media (max-width: 991px){
+
+            .navbar-collapse{
+                padding-top: 15px;
+            }
+
+            .menubar{
+                margin-top: 15px;
+                align-items: flex-start !important;
+            }
+
+            .nav-item{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .nav-btn{
+                width: 100%;
+            }
+        }
+
+        .navbar-toggler{
+            background-color: white !important;
+            border: none;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon{
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
         .category-text::after{
@@ -232,7 +266,16 @@
             color: black;
         }
         .brand-info-img img{
-            border-radius: 50%;
+            border-radius: 15px;
+            /* box-shadow: ; */
+        }
+
+        .brand-info-img img , .beauty-cat {
+            transition: transform 0.4s ease;
+        }
+
+        .brand-info-img img:hover , .beauty-cat:hover{
+            transform: translateY(-10px);
         }
         
 
