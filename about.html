@@ -24,97 +24,117 @@
     
 </head>
 <body>
-     <!-- Navigation Bar -->
-        <nav class="navigation navbar navbar-expand-lg sticky-top" id="navigation">
-            <div class="container-fluid">
+    <!-- Navigation Bar -->
+    <nav class="navigation navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
 
-                <!-- Logo -->
-                <a class="navbar-brand" href="index.html"> 
-                    <span style="color:#ee1d3f; font-size: 30px;">Beautify</span><span style="color:#c20525; font-size: 30px;">Me</span> 
-                </a>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/BeautifyMe Logoo.png"
+                    class="img-fluid"
+                    alt="Logo"
+                    style="height:60px; width: 150px;">
+            </a>
 
-                <!-- Mobile Toggle -->
-                <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Toggle -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Navbar Content -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Search -->
+            <div style="margin-left: 150px; width: 500px;" >
+                <div class="position-relative mx-lg-5 my-2 my-lg-0">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
 
-                    <!-- Search Bar -->
-                    <div class="mx-auto" style="width:40%;">
-                        <div class="position-relative">
-                            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
-
-                            <input type="search"
-                                class="form-control ps-5 bg-light"
-                                placeholder="Search products...">
-                        </div>
-                    </div>
-
-                    <!-- Right Menu -->
-                    <ul class="menubar navbar-nav ms-auto align-items-center">
-
-                        <!-- About -->
-                        <li class="nav-item">
-                            <a class="nav-link custom-link" href="about.html">
-                                About
-                            </a>
-                        </li>
-
-                        <!-- Categories Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                                <span class="category-text">Categories</span>
-                            </a>
-
-                            <ul class="dropdown-menu category-menu">
-                                <li><a class="dropdown-item" href="makeup.html">Makeup</a></li>
-                                <li><a class="dropdown-item" href="skincare.html">Skincare</a></li>
-                                <li><a class="dropdown-item" href="haircare.html">Hair Care</a></li>
-                                <li><a class="dropdown-item" href="fragrance.html">Fragrance</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Wishlist -->
-                        <li class="nav-item">
-                            <button class="btn nav-link text-light"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#wishlistModal">
-                                <i class="fa-solid fa-heart"></i>
-                            </button>
-                        </li>
-
-                        <!-- Cart -->
-                        <li class="nav-item">
-                            <button class="btn nav-link text-light"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#cartModal">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </li>
-
-                        <!-- Login -->
-                        <li class="nav-item">
-                            <button type="button"
-                                    class="login-submit-btn nav-btn btn ms-lg-2 mt-2 mt-lg-0"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#loginModal">
-                                Login
-                            </button>
-                        </li>
-
-                    </ul>
-
+                    <input type="search"
+                        class="form-control ps-5 w-100"
+                        placeholder="Search products...">
                 </div>
             </div>
-        </nav>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Search -->
+                <!-- <div class="position-relative mx-lg-3 my-2 my-lg-0">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
+
+                    <input type="search"
+                        class="form-control ps-5"
+                        placeholder="Search products...">
+                </div> -->
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <!-- About -->
+                                <li class="nav-item">
+                                    <a class="nav-link custom-link" href="about.html">
+                                        About
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link custom-link" href="products.html">
+                                        Products
+                                    </a>
+                                </li>
+
+                                <!-- Categories Dropdown -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                        <span class="category-text">Categories</span>
+                                    </a>
+
+                                    <ul class="dropdown-menu category-menu">
+                                        <li><a class="dropdown-item" href="makeup.html">Makeup</a></li>
+                                        <li><a class="dropdown-item" href="skincare.html">Skincare</a></li>
+                                        <li><a class="dropdown-item" href="haircare.html">Hair Care</a></li>
+                                        <li><a class="dropdown-item" href="fragrance.html">Fragrance</a></li>
+                                    </ul>
+                                </li> -->
+
+                                <!-- Wishlist -->
+                                <li class="nav-item">
+                                    <button class="btn nav-link text-light"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#wishlistModal">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </li>
+
+                                <!-- Cart -->
+                                <li class="nav-item">
+                                    <button class="btn nav-link text-light"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#cartModal">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </li>
+
+                                <!-- Login -->
+                                <li class="nav-item">
+                                    <button type="button"
+                                            class="login-submit-btn nav-btn btn ms-lg-2 mt-2 mt-lg-0"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#loginModal">
+                                        Login
+                                    </button>
+                                </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
 
         <!-- Login Modal Div  -->
         <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
@@ -311,12 +331,19 @@
 
         
         <!-- Footer  -->
-        <footer class="bg-dark text-light py-4" data-aos="fade-up">
+        <footer class=" text-light py-4" data-aos="fade-up">
             <div class="container">
                 <div class="row text-center text-md-start">
 
                 <div class="col-md-3 ">
-                    <h5 class="text-danger"><span style="color:#ee1d3f;">Beautify</span><span style="color:#c20525;">Me</span></h5>
+                    <!-- <h5 class="text-danger"><span style="color:#ee1d3f;">Beautify</span><span style="color:#c20525;">Me</span></h5> -->
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/BeautifyMe Logoo.png"
+                            class="img-fluid"
+                            alt="Logo"
+                            style="height:60px; width: 150px;">
+                    </a>
                     <p>Your beauty, our passion.</p>
                 </div>
 

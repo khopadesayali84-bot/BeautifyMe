@@ -5,16 +5,16 @@
         }
 
         /* Navbar */
-        #navigation{
-            background-color: #272323;
+        .navigation{
+            background-color: #050505;
             z-index: 1020;
             min-height: 70px;
             padding: 12px 20px;
         }
 
-        .navbar-brand{
-            letter-spacing: 1px;
-        }
+        /* .navbar-brand img{
+            height: 100px;
+        } */
 
         /* Navbar Links */
         .custom-link,
@@ -335,6 +335,9 @@
             border-radius: 50%;
         }
 
+        footer{
+            background-color: #050505;
+        }
 
 .text-pink {
   color: #e91e63;
