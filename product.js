@@ -1,63 +1,28 @@
-// Display Products in products page using filters 
-// const filteredItems = document.querySelectorAll(".filter-item");
-// const productCards = document.querySelectorAll(".product-card");
-
-// filteredItems.forEach(item => {
-//     item.addEventListener("click", () =>{
-        
-//         filteredItems.forEach(filter => {
-//             filter.classList.remove("active");
-//         })
-
-//         item.classList.add("active");
-
-//         const selectedCategory = item.dataset.category;
-
-//         productCards.forEach(card => {
-//             cardCategory = card.dataset.category;
-
-//             if(selectedCategory === "All" ||
-//                 cardCategory === selectedCategory){
-//                     card.style.display = "block";
-//                 }
-//             else{
-//                  card.style.display = "none";
-//             }
-//         })
-//     })
-// })
-
-const filteredItems = document.querySelectorAll(".filter-item");
+const searched_item = document.querySelector("#searched-item");
 const productContainer = document.querySelector("#product-container");
-
-document.querySelector('[data-category="All"]').click();
-
+const filteredItems = document.querySelectorAll(".filter-item");
 
 
 
-filteredItems.forEach(item => {
-    document.querySelector('[data-category="All"]').click();
-    item.addEventListener("click", () => {
-        // console.log(item);
-        filteredItems.forEach(filter => {
-            filter.classList.remove("active");
-        })
+// Shorter the name function 
 
-        // productContainer.innerHTML = "";
-
-        item.classList.add("active");
-        const selectedCategory = item.dataset.category;   //product choice 
-        console.log(selectedCategory);
+function shorterName(name, limit=15){
+    if(name.length > limit){
+        return name.substring(0, limit) + "...";
+    }
+    else{
+        return name;
+    }
+}
 
 
-        
-
-        products.forEach(product => {
-            // const productName = product.name;
-            // if(productName.length > 15){
-            //     productName = productName.substring(0, 15) + "...";
-            // }
-            let demo = `
+// Create product function 
+  
+function createProductCard(product){
+    const productName = shorterName(product.name, 15);
+    const productTagline = shorterName(product.tagline, 25);
+    
+    return `
             <div class="col">
                 <div class="product-card card flex-shrink-0 shadow p-3 mx-2 my-4 rounded" 
                 data-id="${product.id}"
@@ -76,8 +41,8 @@ filteredItems.forEach(item => {
                         <img src="${product.image}" class="card-img-top">
                     </div>
                     <div class="card-body text-center">
-                        <h6 class="card-title">${product.name}</h6>
-                        <p class="text-muted small mb-2">${product.tagline}</p>
+                        <h6 class="card-title">${productName}</h6>
+                        <p class="text-muted small mb-2">${productTagline}</p>
                         <p>
                             <span class="fw-bold text-danger mb-2">₹${product.price}</span> 
                             <del class="fw-bold text-secondary mb-2 ms-2">₹${product.originalPrice} </del>
@@ -88,27 +53,65 @@ filteredItems.forEach(item => {
                 </div>
             </div>
                 `;
-                // console.log(product.category);
-                // console.log(selectedCategory);
-    //    console.log(product.category);
-            // if(selectedCategory === "All" || product.category === selectedCategory)   //skin===skin
-                
-              if(selectedCategory==="All" || selectedCategory==="all" || selectedCategory==="ALL")  
-                {
-                productContainer.innerHTML += demo;
-            }
-            else if(product.category === selectedCategory)
-            {
-                productContainer.innerHTML+=demo;
-            }
-            else{
-                // productContainer.innerHTML += `<h1 class="text-danger text center">Searched Product Not Found</h1>`;
-            }
-       
+}
+
+
+// Display Products Function 
+
+function displayProducts(category = "All"){
+
+    productContainer.innerHTML = "";
+    const searchText = searched_item.value.trim().toLowerCase();
+    let found = false;
+    products.forEach(product => {
+        const matchCategory = category === 'All' || product.category === category;
+        const matchSearch = product.name.toLowerCase().includes(searchText);
+
+        if(matchCategory && matchSearch){
+            productContainer.innerHTML += createProductCard(product);
+            found = true;
+        }
+    })
+    if(!found){
+        productContainer.innerHTML = `
+        <h3 class="text-center text-danger mt-5">
+            Product Not Found
+        </h3>
+        `;
+    }
+}
+
+
+// Search item function 
+
+
+searched_item.addEventListener("input", () => {
+    const activeCategory = document.querySelector(".filter-item.active").dataset.category;
+    displayProducts(activeCategory);
+});
+
+
+
+// Products Filters 
+
+
+filteredItems.forEach(item => {
+
+    item.addEventListener("click", () => {
+        
+        filteredItems.forEach(filter => {
+            filter.classList.remove("active");
         })
+
+        item.classList.add("active");
+        const selectedCategory = item.dataset.category;   //product choice 
+        
+        displayProducts(selectedCategory);
     })
 })
 
 
+// Displaying all products 
 
+displayProducts();
 
